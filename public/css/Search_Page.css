@@ -1,0 +1,68 @@
+.result_div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+    border: 1.7px solid black;
+    margin-bottom: 2vh;
+}
+
+.result_div p {
+    font-weight: 700 !important;
+    font-size: 20px;
+}
+
+.result_div button {
+    font-weight: 500;
+    font-size: 1vw;
+}
+
+/*heading*/
+
+.result_heading_div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1.7px solid black;
+    margin-bottom: 2vh;
+}
+
+.result_heading_div p {
+    font-weight: 700 !important;
+    font-size: 20px;
+}
+
+
+/* CSS for hiding the payment pop-up */
+.popup {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  }
+  
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+ .payMethod{
+    padding-bottom: 30px;
+ } 
+
+ .payMethod input{
+    font-family: "space grotesk", sans-serif;
+    font-size: 1.5 rem;
+    line-height: 2 rem;
+    font-weight: 500;
+ }

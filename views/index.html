@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUS_NEXUS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">   
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+        <!--Nav -bar-->
+    <header>
+        <nav>
+            <section class="container nav_bar flex">
+                <div class="brand flex">
+                    <img src=".\img\img25.png" width="60px" height="40px" alt="" class="logo">
+                    <div class="logo-text">
+                        <h3 class="logo-title">BUS_NEXUS</h3>
+                        <p class="logo-subtitle">Bridging Gaps, Connecting Lives</p>
+                    </div>
+                    
+                </div>
+                <div>
+                    <ul class="nav_links">
+                        <li><a href="index.html" class="nav_link small-bold-text">Home</a></li>
+                        <li><a href="#features-link" class="nav_link small-bold-text">Features</a></li>
+                        <div class="dropdown">
+                            <button class="nav_link small-bold-text">Account</button>
+                            <div class="dropdown-content">
+                                <a href="#" id="wallet"></a> <!---->
+                                <a href="My_Bookings.html">My Bookings</a>
+                                <a href="Search_Page.html">Search BUS</a>
+                                <a href="My_Bookings.html">Cancel Bookings</a>
+                            </div>
+                        </div>
+                        <li><a href="sign_up.html" class="nav_link primary-button small-bold-text">Log in</a></li>
+                        <li><a href="sign_up.html" class="nav_link secondary-button small-bold-text" id="sign-up-text">Sign Up</a>
+                        </li>
+                        <div class="menu dropdown">
+                            <button><i class="ri-menu-line"></i></button>
+                            <div class="dropdown-content">
+                                <a href="index.html">Home</a>
+                                <a href="#features-link">Features</a>
+                                <a href="My_Bookings.html">My Bookings</a>
+                                <a href="Search_Page.html">Search BUS</a>
+                                <a href="My_Bookings.html">Cancel Bookings</a>
+                            </div>
+                        </div>
+                        
+                    </ul>
+                </div>
+            </section>
+            <hr>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section-->
+        <section class="hero-section container flex">
+            <div class="hero-text">
+                <h1>BOOK YOUR <span class="bus-tickets">BUS TICKETS </span>WITH EASE</h1>
+                <P>BUS_NEXUS provieds an easy and efficient way to book your bus tickets for daily commytes or long
+                    trips.</P>
+                <button class="secondary-button">Book Now</button>
+                <div class="hero-features">
+
+                </div>
+            </div>
+            <div class="hero2-img-div">
+                <img class="hero2-img" src="./img/img22.png">
+            </div> 
+        </section>
+
+        <!--Search Section-->
+        <section class="search-bar ">
+            <div class="search-section container flex">
+                <h2>Your Journey, Our Priority</h2>
+                <p>Search Your BUS NOW!</p>
+                <div class="search-form flex">
+                    <div class="start flex" style="flex-direction: column;">
+                        <label for="startLocation">Starting Location:</label>
+                        <input type="text" id="startLocation" placeholder="Enter Your Staring Point" />
+                    </div>
+                    <div class="dest flex" style="flex-direction: column;">
+                        <label for="destination">Destination:</label>
+                        <input type="text" id="destination" placeholder="Enter Your Destination" />
+                    </div>
+                    <div class="time flex" style="flex-direction: column;">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" placeholder="Enter Your Travel Date" />
+                    </div>
+                </div>
+                <button onclick="searchBus()" class="-button third-button">Book Bus</button>
+            </div>
+        </section>
+
+        <!--Features-section-->
+        <section class="features-section" id="features-link">
+            <div class="container">
+                <div class="features-heading">
+                    <h2>What We Offer- - ></h2>
+                    <a href="Features.html" class="features-heading-button secondary-button">See all features</a>
+                </div>
+                <div class="features flex">
+                    <div class="feature">
+                        <img src="./img/img12.png" class="features-img" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">Bus Route selection and Booking</h3>
+                        <div class="text-p1">A convenient way to plan your journeys and secure seats for their desired routes</div>
+                        <a href="Features.html" class="primary-button">Learn more</a>
+                    </div>
+                    <div class="feature">
+                        <img src="./img/img11.png" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">Payment Processing</h3>
+                        <div class="text-p1">Make secure and seamless payments using credit cards or online wallets</div>
+                        <a href="Features.html" class="primary-button">Learn more</a>
+                    </div>
+                    <div class="feature">
+                        <img src="./img/img7.jpg" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">cancellation and Refund</h3>
+                        <div class="text-p1">Flexibility to change or cancel their reservations & receiving Refund</div>
+                        <a href="Features.html" class="primary-button">Learn more</a>
+                    </div>
+                    <div class="feature">
+                        <img src="./img/img8.png" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">Print Booking Ticket</h3>
+                        <div class="text-p1">Print booking ticket to confirm your reservation for your journey</div>
+                        <a href="Features.html" class="primary-button">Learn more</a>
+                    </div>
+                    <div class="feature">
+                        <img src="./img/img10.webp" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">Booking Modification</h3>
+                        <div class="text-p1">Make changes to your reservation to ensuring flexibility in your travel plans</div>
+                        <a href="Features.html" class="primary-button">Learn more</a>
+                    </div>
+                    <div class="feature">
+                        <img src="./img/img2.jpg" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">Trip History and Feedback</h3>
+                        <div class="text-p1">provide a record of past journeys and an opportunity  to share their experiences</div>
+                        <a href="Features.html" class="primary-button">Learn more</i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Hero 2-->
+        <section class="hero-section container flex hero2">
+            <div class="hero2-img-div">
+                <img class="hero2-img" src="./img/img23.png">
+            </div> 
+            <div class="hero-text">
+                <h1>Bulid for <span class="bus-tickets">Bus Travellers</span>, by <span class="bus-tickets">Bus Travellers</span></h1>
+                <P>At BUS_NEXUS, we are passionate about making bus travel easy and accessible for everyone. Our platform is designed to cater to the needs of bus travelers, providing them with a seamless booking experience.</P>
+                <!--<button class="secondary-button">Book Now</button>-->
+                <div class="hero-features flex">
+                    <div class="small-features flex">
+                        <img src="./img/img18.png" alt="">
+                        <p>All-In-One Booking Toolkit</p>
+                    </div>
+                    <div class="small-features flex">
+                        <img src="./img/img19.png" alt="">
+                        <p>Integrated Payment Gateways</p>
+                    </div>
+                    <div class="small-features flex">
+                        <img src="./img/img20.png" alt="">
+                        <p>Easy Ticket Management</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Customer Feedbacks-->
+        <section class="customer-feedback container flex">
+            <div class="feedback-text hero-text">
+                <h1>What Our Customer Say</h1>
+            </div>
+            <div class="feedbacks flex">
+                <div class="feedback-img">
+                    <img src="./img/img15.png" alt="">
+                </div>
+                <div class="feedback-img">
+                    <img src="./img/img16.png" alt="">
+                </div>
+                <div class="feedback-img">
+                    <img src="./img/img17.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!--Download Section-->
+        <section class="download container flex">
+            <div class="download-text flex">
+                <h2>Download Our Mobile APP NOW!</h2>
+                <p>We offer a range of ticket options to suit your travel needs and budget. From daily commute tickets to long trip options, we've got you covered.</p>
+                <button class="secondary-button">DOWNLOAD</button>
+            </div>
+            <div class="download-img flex">
+                <img src="./img/img21.png" alt="" width="500px" height="500px">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!--Footer-->
+        <section class="footer-bar">
+            <hr>
+            <section class="container nav_bar flex footer-content">
+                <div>
+                    <ul class="nav_links">
+                        <li><a href="policies.html" class="nav_link small-bold-text">Privacy Policy</a></li>
+                        <li><a href="policies.html" class="nav_link small-bold-text">Terms and Conditions</a></li>
+                        <li><a href="policies.html" class="nav_link small-bold-text">Contact</a></li>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+    </footer>
+
+    <script src="/js/index.js" type="text/javascript"></script>
+    <script>
+        // Call the function when the page loads
+        window.onload = function() {
+            walletBalance();
+        };  
+      </script> <!---->
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUS_NEXUS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/My_Bookings.css">
+    <link rel="stylesheet" href="/css/Search_Page.css" class="css">
+</head>
+<body>
+    <header>
+        <!--Nav -bar-->
+        <nav>
+            <section class="container nav_bar flex">
+                <div class="brand flex">
+                    <img src=".\img\img25.png" width="60px" height="40px" alt="" class="logo">
+                    <div class="logo-text">
+                        <h3 class="logo-title">BUS_NEXUS</h3>
+                        <p class="logo-subtitle">Bridging Gaps, Connecting Lives</p>
+                    </div>
+                    
+                </div>
+                <div>
+                    <ul class="nav_links">
+                        <li><a href="index.html" class="nav_link small-bold-text">Home</a></li>
+                        <div class="dropdown">
+                            <button class=" nav_link small-bold-text">Account</button>
+                            <div class="dropdown-content">
+                                <a href="My_Bookings.html">My Bookings</a>
+                                <a href="Search_Page.html">Search BUS</a>
+                                <a href="My_Bookings.html">Cancel Bookings</a>
+                            </div>
+                        </div>
+                        <i class="ri-menu-line"></i>
+                    </ul>
+                </div>
+            </section> 
+            <hr>
+        </nav>
+    </header>
+    <main>
+       <div  id="searchResults" class="main-content container">
+        <!-- Search results will be displayed here -->
+       </div>
+       <!-- Payment Pop-up (Hidden by default) -->
+       <div id="paymentPopup" class="popup">
+        <div class="popup-content">
+          <h2 id="fareAmount">Pay Now</h2>
+          <p>Select Payment Method:</p>
+          <div class="payMethod">
+            <label>
+                <input type="radio" name="paymentMethod" value="netBanking" id="netBanking"> Net Banking
+              </label>
+              <br>
+              <label>
+                <input type="radio" name="paymentMethod" value="upi" id="upi"> UPI
+              </label>
+              <br>
+              <label>
+                <input type="radio" name="paymentMethod" value="appWallet" id="appWallet"> App Wallet
+              </label>
+              <br>
+          </div>
+          
+          <button class="secondary-button" onclick="processPayment()" id="payButton">Pay</button>
+          <button class="secondary-button" onclick="location.reload()">Back</button>
+        </div>
+      </div>
+    </main>
+    <script src="js/My_Bookings.js" type="text/javascript"></script>
+    <script src="js/Search_Page.js"  type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+    <script>
+        // Call the displaySearchResults function when the page loads
+        window.onload = function() {
+          displaySearchResults();
+        };
+      </script>
+</body>
+</html>

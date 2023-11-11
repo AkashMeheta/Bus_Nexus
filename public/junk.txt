@@ -1,0 +1,128 @@
+<section class="Features-section container flex">
+            <div class="title">
+                <h2>What We Offer</h2>
+                <p>Our Platform Offer a range of features to make your bus ticket booking experience easy and
+                    convenient. From easy search and booking option to flexible cancellation polices. we've got you
+                    covered.</p>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <img src="" alt="">
+                    <h3>Workflows That Work</h3>
+                    <p>I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="" alt="">
+                    <h3>All-In-One Solution</h3>
+                    <p>I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="" alt="">
+                    <h3>Comprehensive Customer Support</h3>
+                    <p>I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="" alt="">
+                    <h3>Smart Automation Tools</h3>
+                    <p>I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+text for features
+------------------
+log in
+Bus Route selection and Booking : Passengers can choose their origin, destination, travel date, and select seats to book tickets conveniently.
+
+
+Payment Processing: Users can make secure and seamless payments using credit cards or online wallets for ticket reservations.
+
+cancellation and Refund: Passengers can request ticket cancellations, and the system will process refunds based on the cancellation reason.
+
+Print Booking Ticket: Passenger can print their booked ticket as a hard copy.
+
+Booking Modification: Users can modify their bookings, such as changing travel dates or seats, and the system will update the details accordingly.
+
+Trip History and Feedback: Users can access their past trip history and provide feedback to improve the service
+
+<div class="hero-img">
+                <img src="./img/img4.png" alt="">
+            </div>
+
+
+            space grotesk
+            promixa nova
+
+<div class="feedback-text hero-text">
+                <h1>What Our Customer Say</h1>
+            </div>
+            <div class="feedbacks">
+                <div class="feedback-img-div">
+                    <div class="feedback">
+                        <p>"Booking my long trip tickets was a breeze with BUS_NEXUS. Their all-in-one solution made it easy for me to search, book, and manage my tickets in one place."</p>
+                        <h3 class="name">Aritra Modok, Long Distance Traveler</h3>
+                    </div>
+                </div>
+                
+                <div class="feedback">
+                    <p>"I've been using BUS_NEXUS for my daily commute for the past year, and I'm impressed with their user-friendly platform and efficient booking workflows."</p>
+                    <h3 class="name">Sachin Prasad, Regular Commuter</h3>
+                </div>
+                <div class="feedback">
+                    <p>"I had to cancel my tickets at the last minute, and the customer support team at BUS_NEXUS was very helpful in assisting me with the process. I highly recommend their platform."</p>
+                    <h3 class="name">Aniket Dutta, Satisfied Customer</h3>
+                </div>
+            </div>            
+.feedback-text h1{
+    font-size: 2vw;
+    padding: 30px;
+}
+
+.feedbacks{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedback{
+    flex-direction: column;
+    min-width: 250px;
+    width: 30%;
+}
+
+.feedback p{
+    padding: 5px;
+}
+
+.name{
+    font-family: 'poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding-top: 20px;
+}           #F9E795 rgba(245, 181, 2, 0.8)
+
+
+<div id="paymentPopup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePaymentPopup()">&times;</span>
+    <h2 id="fareAmount">Pay Now</h2>
+    <p>Select Payment Method:</p>
+    <label>
+      <input type="checkbox" id="netBanking"> Net Banking
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" id="upi"> UPI
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" id="appWallet"> App Wallet
+    </label>
+    <br>
+    <button class="secondary-button" onclick="processPayment()" id="payButton">Pay</button>
+    <button class="secondary-button" onclick="location.reload()">Back</button>
+  </div>
+</div>

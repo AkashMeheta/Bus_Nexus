@@ -1,0 +1,29 @@
+.content {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 100% !important;
+}
+
+.Bus_Route {
+    background-color: #F9E795;
+}
+
+.Print {
+    background-color: #F9E795;
+}
+
+.Payment_Processing{
+    background-color: #F96167;
+}
+
+.Booking_Modification {
+    background-color: #F96167;
+}
+
+.Cancellation{
+    background-color: #8AAAE5;
+}
+
+.Trip_History {
+    background-color: #8AAAE5;
+}

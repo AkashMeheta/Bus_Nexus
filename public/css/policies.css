@@ -1,0 +1,17 @@
+.content {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 100% !important;
+}
+
+.privacy_policy {
+    background-color: #F9E795;
+}
+
+.terms_and_conditions {
+    background-color: #F96167;
+}
+
+.contact_us {
+    background-color: #8AAAE5;
+}

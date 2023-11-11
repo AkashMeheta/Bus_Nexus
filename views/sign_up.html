@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up and Log IN</title>
+    <link rel="stylesheet" href="/css/sign_up.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container  sign-up-container">
+            
+            <form action="/sign_up" method="post">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Name" name="Name"/>
+                <input type="email" placeholder="Email" name="Email" />
+                <input type="password" placeholder="password" name="Password"/>
+                <input type="submit" class="secondary-button" value="Register">
+                <button class="primary-button"><a href="index.html">Back</a></button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="/sign_up" method="post">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" placeholder="Email" name="Email" />
+                <input type="password" placeholder="password" name="password"/>
+                <a href="#">Forgot Your password?</a>
+                <!-- <button class="secondary-button">Log In</button> -->
+                <input type="submit" class="secondary-button" value="Log In">
+                <button class="primary-button"><a href="index.html">Back</a></button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back</h1>
+                    <p>To Keep Connected With Us Please Login with Your Personal Info</p>
+                    <button class="ghost primary-button" id="signin">Log In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter Your Personal Details and Start Journey With Us</p>
+                    <button class="ghost primary-button" id="signup">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/sign_up.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/ad23db6a50.js" crossorigin="anonymous"></script>
+</body>
+</html>
