@@ -6,7 +6,4 @@ router.get("/", (req, res) => {
         res.sendFile("index.html", { root: path.join(__dirname, "../views") });
 });
 
-//post database
-
-
 module.exports = router;
