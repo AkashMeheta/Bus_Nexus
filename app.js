@@ -6,7 +6,8 @@ require('./src/db/connection.js');
 const Register = require("./src/models/userSchema");
 
 const homeRoutes = require('./routes/home');
-//const userRoutes = require('./routes/user');
+const registerRoutes = require('./routes/register.js');
+const loginRoutes = require('./routes/login.js')
 
 
 const app = express();
@@ -20,29 +21,9 @@ app.use(express.static(path.join(__dirname, 'views')));
 
 app.use("/", homeRoutes);
 
-app.post('/sign_up', async (req, res) => {
-  try {
-          const password =  req.body.Password;
-          const name =  req.body.Name;
-          const email =  req.body.Email;
-          console.log(password);
-          console.log(name);
-          console.log(email);
-          const RegisterUser = new Register({
-            Name: name,
-            Email: email,
-            Password: password
-          })
+app.post("/sign_up", registerRoutes);
 
-          const registered = await RegisterUser.save();
-          //res.send(RegisterUser);
-          res.sendFile("index.html", { root: path.join(__dirname, "views") });
-          
-  } catch (error) {
-          res.status(400).send(error);
-  }
-})
-
+app.post('/log_in', loginRoutes);
 
 
 app.listen(PORT, () => {

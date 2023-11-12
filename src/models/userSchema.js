@@ -18,6 +18,6 @@ const userSchemea = new mongoose.Schema({
 
 //collection
 
-const Register = new mongoose.model("User", userSchemea);
+const Register = new mongoose.model("user", userSchemea);
 
 module.exports = Register;
