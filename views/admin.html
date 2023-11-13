@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
     <!--Nav -bar-->
@@ -20,18 +23,19 @@
                 </div>
                 <div>
                     <ul class="nav_links">
-                        <li><a href="index.html" class="nav_link small-bold-text">Home</a></li>
+                        <li><a href="admin.html" class="nav_link small-bold-text">Home</a></li>
                         <li><a href="#features-link" class="nav_link small-bold-text">Features</a></li>
-                        <div class="dropdown">
+                        <li><button href="index.html" class="primary-button">LOG OUT</button></li>
+                        <!--<div class="dropdown">                   
                             <button class="nav_link small-bold-text">Account</button>
                             <div class="dropdown-content">
-                                <a href="#" id="wallet"></a> <!---->
+                                <a href="#" id="wallet"></a> 
                                 <a href="My_Bookings.html">My Bookings</a>
                                 <a href="Search_Page.html">Search BUS</a>
                                 <a href="My_Bookings.html">Cancel Bookings</a>
                                 <a href="index.html">LOG OUT</a>
                             </div>
-                        </div>
+                        </div>-->
                         
                         <div class="menu dropdown">
                             <button><i class="ri-menu-line"></i></button>
@@ -49,6 +53,188 @@
             </section>
             <hr>
         </nav>
-    </header>    
+    </header> 
+    <main>
+        <!-- Non-static counts -->
+        <div class="dashboard  container">
+            <div class="box p1">
+                <h2>Users Count</h2>
+                <p id="userCount">0</p>
+            </div>
+            <div class="box p2">
+                <h2>Bookings Count</h2>
+                <p id="bookingsCount">0</p>
+            </div>
+            <div class="box p3">
+                <h2>Amount Recevied</h2>
+                <p id="amountCount">0</p>
+            </div>
+        </div>
+
+        <!-- add bus div -->
+        <div class="addBus container">
+            <div class="user-table-header">
+                <h2>Add Custom Buses</h2>
+                <button class="secondary-button" id="addUserButton" onclick="addBusButton()"> ADD BUS </button>
+            </div>
+            <table id="bus-table" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Start Location</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Fare</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="bus-list">
+                    <!-- Bus listings will be added here dynamically using JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="addBus-popup addUser-popup" id="add-bus-pop">
+            <form id="bus-form" class="add-user-form">
+                <div class="popup-header popup-flex">
+                    <h3>ADD BUS</h3>
+                    <button class="close-button secondary-button" onclick="closePopup1()">&times;</button>
+                </div>
+                
+                <div class="startLocation">
+                    <label for="startLocation">Start Location:</label>
+                    <input type="text" id="startLocation" placeholder="Starting Location" required>
+                </div>
+                <div class="destination">
+                    <label for="destination">Destination:</label>
+                    <input type="text" id="destination" placeholder="Destination" required>
+                </div>
+                <div class="date">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" placeholder="Date" required>
+                </div>
+                <div class="time">
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" placeholder="Time" required>
+                </div>
+                <div class="fare">
+                    <label for="fare">Fare:</label>
+                    <input type="text" id="fare" placeholder="Fare" required >
+                </div>
+                <button type="submit" class="secondary-button">Add Bus</button>
+            </form>
+        </div>
+        <!-- user add div -->
+        <div class="user-details-div container">
+            <div class="user-table-header">
+                <h2>Add User</h2>
+                <button class="secondary-button" id="addUserButton" onclick="addUserButton()"> NEW USER </button>
+            </div>
+            <table id="bus-table" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Bus listings will be added here dynamically using JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="addUser-popup" id="pop">
+            <form action="/addUser" method="post" class="add-user-form">
+                <div class="popup-header popup-flex">
+                    <h3>ADD USER</h3>
+                    <button class="close-button secondary-button" onclick="closePopup2()">&times;</button>
+                </div>                
+                <div class="name">
+                    <label for="username">User Name:</label>
+                    <input type="text" placeholder="Name" name="Name" required/>
+                </div>
+                <div class="email">
+                    <label for="useremail">User Email:</label>
+                    <input type="email" placeholder="Email" name="Email"  required/>
+                </div>
+                <div class="password">
+                    <label for="Password">Password:</label>
+                    <input type="password" placeholder="password" name="Password" required/>
+                </div>
+                <input type="submit" class="secondary-button" value="Add User">
+            </form>
+        </div>
+
+        <!-- features -->
+        <section class="features-section" id="features-link">
+            <div class="container">
+                <div class="features-heading">
+                    <h2>What We Offer- - ></h2>
+                    <a href="Features.html" class="features-heading-button secondary-button">See all features</a>
+                </div>
+                <div class="features flex">
+                    <div class="feature">
+                        <img src="./img/img12.png" class="features-img" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">Bus Route selection and Booking</h3>
+                        <div class="text-p1">A convenient way to plan your journeys and secure seats for their desired routes</div>
+                        <a href="Features.html" class="primary-button">Learn more</a>
+                    </div>
+                    <div class="feature">
+                        <img src="./img/img11.png" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">Payment Processing</h3>
+                        <div class="text-p1">Make secure and seamless payments using credit cards or online wallets</div>
+                        <a href="Features.html" class="primary-button">Learn more</a>
+                    </div>
+                    <div class="feature">
+                        <img src="./img/img7.jpg" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">cancellation and Refund</h3>
+                        <div class="text-p1">Flexibility to change or cancel their reservations & receiving Refund</div>
+                        <a href="Features.html" class="primary-button">Learn more</a>
+                    </div>
+                    <div class="feature">
+                        <img src="./img/img8.png" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">Print Booking Ticket</h3>
+                        <div class="text-p1">Print booking ticket to confirm your reservation for your journey</div>
+                        <a href="Features.html" class="primary-button">Learn more</a>
+                    </div>
+                    <div class="feature">
+                        <img src="./img/img10.webp" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">Booking Modification</h3>
+                        <div class="text-p1">Make changes to your reservation to ensuring flexibility in your travel plans</div>
+                        <a href="Features.html" class="primary-button">Learn more</a>
+                    </div>
+                    <div class="feature">
+                        <img src="./img/img2.jpg" width="60px" height="60px" alt="">
+                        <h3 class="text-h3">Trip History and Feedback</h3>
+                        <div class="text-p1">provide a record of past journeys and an opportunity  to share their experiences</div>
+                        <a href="Features.html" class="primary-button">Learn more</i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!--Footer-->
+        <section class="footer-bar">
+            <hr>
+            <section class="container nav_bar flex footer-content">
+                <div>
+                    <ul class="nav_links">
+                        <li><a href="policies.html" class="nav_link small-bold-text">Privacy Policy</a></li>
+                        <li><a href="policies.html" class="nav_link small-bold-text">Terms and Conditions</a></li>
+                        <li><a href="policies.html" class="nav_link small-bold-text">Contact</a></li>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+    </footer>
+    <script src="js/admin.js"></script> 
+    <script>
+        window.onload = function() {
+            Count();
+        }; 
+    </script>  
 </body>
 </html>

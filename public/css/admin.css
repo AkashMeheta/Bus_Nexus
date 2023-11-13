@@ -1,0 +1,139 @@
+/* nab bar */
+.nav_bar{
+  padding-top: 10px !important;
+}
+
+
+.dashboard {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-around;
+  padding: 15px 0px;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 300px;
+  height: 200px;
+  border-radius: 5px solid white;
+  background-color: skyblue;
+  margin: 10px 10px;
+  border: 3px solid black;
+  border-radius: 15px 50px  30px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.box h2 {
+  font-size: 30px;
+  color: whitesmoke;
+  text-align: center;
+  text-shadow: 0 0 09px #000000, 0 0 10px #000000;
+}
+.box p {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 20px #000000, 0 0 20px #000000;
+}
+
+.p1 {
+  background: rgb(255,135,80);
+  background: linear-gradient(158deg, rgba(255,135,80,1) 0%, rgba(255,182,150,1) 70%, rgba(255,255,255,1) 100%);  
+}
+
+.p2 {
+  background: rgb(20,223,149);
+  background: linear-gradient(158deg, rgba(20,223,149,1) 0%, rgba(111,255,203,1) 70%, rgba(255,255,255,1) 100%);
+}
+
+.p3 {
+  background: rgb(9,185,190);
+  background: linear-gradient(158deg, rgba(9,185,190,1) 0%, rgba(79,207,210,1) 81%, rgba(255,255,255,1) 100%);
+}
+
+/* user add popup*/
+.addUser-popup{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 15px 15px 12px rgba(0, 0, 0, 0.466);
+}
+.add-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.popup-flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-button{
+  padding: 5px !important;
+  cursor: pointer;
+}
+.cancel-button{
+  padding: 5px !important;
+  cursor: pointer;
+}
+
+/* add bus */
+.addBus{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* user table */
+.user-details-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.user-table-header {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.user-table-header button {
+  padding: 5px 8px !important;
+  cursor: pointer;
+}
+
+/* time input */
+input[type="time"] {
+  background: white;
+  padding: 0px !important;
+  color: #000000;
+}
+
+input[type="time"] ::placeholder{
+  color: black;
+}
+
+/* table hover */
+/* Add a hover effect for table rows */
+#bus-list tr:hover {
+  background-color: lightgray; /* Change to your desired background color */
+}
+
+/* Add a hover effect for table columns (cells) */
+#bus-list tr:hover td {
+  background-color: lightblue; /* Change to your desired background color */
+}
+

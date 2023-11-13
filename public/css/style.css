@@ -64,9 +64,9 @@ hr {
 }
 
 .nav_bar {
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 70px !important;
 }
 
 .nav_links {

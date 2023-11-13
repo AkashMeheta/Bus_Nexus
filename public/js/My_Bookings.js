@@ -13,6 +13,16 @@ function cancelBooking(index) {
     const updatedBalance = currentBalance + canceledBookingFare;
     localStorage.setItem('balance', updatedBalance);
 
+    //Update admin Bank Balance
+    const adminBank = JSON.parse(localStorage.getItem('adminBankBalance'));
+    adminBankBalance = adminBank - canceledBookingFare;
+    localStorage.setItem('adminBankBalance', JSON.stringify(adminBankBalance));
+
+    //update booking count in admin panel
+    const bookingCount = JSON.parse(localStorage.getItem('bookingCount'));
+    const livebookingCount = bookingCount - 1;
+    localStorage.setItem('bookingCount', JSON.stringify(livebookingCount));
+
     // Remove the canceled booking from the list
     myBookings.splice(index, 1);
     localStorage.setItem('bookings', JSON.stringify(myBookings));

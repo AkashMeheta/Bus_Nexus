@@ -104,7 +104,7 @@ Trip History and Feedback: Users can access their past trip history and provide 
     padding-top: 20px;
 }           #F9E795 rgba(245, 181, 2, 0.8)
 
-
+INPORTANT
 <div id="paymentPopup" class="popup">
   <div class="popup-content">
     <span class="close" onclick="closePaymentPopup()">&times;</span>
@@ -126,3 +126,60 @@ Trip History and Feedback: Users can access their past trip history and provide 
     <button class="secondary-button" onclick="location.reload()">Back</button>
   </div>
 </div>
+
+
+
+<!-- Payment Pop-up (Hidden by default) -->
+       <div id="paymentPopup" class="popup">
+        <div class="popup-content">
+          <h2 id="fareAmount">Pay Now</h2>
+          <p>Select Payment Method:</p>
+          <div class="payMethod">
+            <label>
+                <input type="radio" name="paymentMethod" value="netBanking" id="netBanking"> Net Banking
+              </label>
+              <br>
+              <label>
+                <input type="radio" name="paymentMethod" value="upi" id="upi"> UPI
+              </label>
+              <br>
+              <label>
+                <input type="radio" name="paymentMethod" value="appWallet" id="appWallet"> App Wallet
+              </label>
+              <br>
+          </div>
+          
+          <button class="secondary-button" onclick="processPayment()" id="payButton">Pay</button>
+          <button class="secondary-button" onclick="location.reload()">Back</button>
+        </div>
+      </div>
+
+        <!-- special Bus section -->
+        <div class="addBus container">
+            <div class="user-table-header">
+                <h2>Special Buses - -></h2>
+            </div>
+            <table id="bus-table" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Start Location</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Fare</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="bus-list">
+                    <!-- Bus listings will be added here dynamically using JavaScript -->
+                        <!-- <td>Index</td>
+                        <td>Start Location</td>
+                        <td>Destination</td>
+                        <td>Date</td>
+                        <td>Time</td>
+                        <td>Fare</td>
+                        <td>Action</td> -->
+                </tbody>
+            </table>
+        </div>

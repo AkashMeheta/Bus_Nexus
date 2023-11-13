@@ -1,8 +1,9 @@
 // Search Results Page
 
+//display Search Result
 function displaySearchResults() {
     const searchResults = JSON.parse(localStorage.getItem('searchResults'));
-  
+    
     if (!searchResults || searchResults.length === 0) {
       document.getElementById('searchResults').textContent = 'No search results found.';
     } else {
@@ -105,8 +106,18 @@ function processPayment() {
       //Update Wallet Balance
       const liveBalance = JSON.parse(localStorage.getItem('balance')); //Store by bookbus();
       const payAmount = JSON.parse(localStorage.getItem('FareAmount'));
-      Balance = liveBalance - paymentAmount;
+      Balance = liveBalance - payAmount;
       localStorage.setItem('balance', JSON.stringify(Balance));
+
+      //update admin locar balance
+      const adminBank = JSON.parse(localStorage.getItem('adminBankBalance'));
+      adminBankBalance = adminBank + payAmount;
+      localStorage.setItem('adminBankBalance', JSON.stringify(adminBankBalance));
+
+      //update Bookings Numbers
+      const bookingCount = JSON.parse(localStorage.getItem('bookingCount'));
+      const livebookingCount = bookingCount + 1;
+      localStorage.setItem('bookingCount', JSON.stringify(livebookingCount));
 
       // Redirect to My Bookings Page
       window.location.href = 'My_Bookings.html';
