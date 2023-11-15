@@ -1,5 +1,4 @@
 
-
 //storing Some local Storage values
 if (localStorage.getItem('adminBankBalance') === null) {
   localStorage.setItem('adminBankBalance', 0);
@@ -23,6 +22,39 @@ fetch('/documentCount')
     countElement.textContent = 'Error fetching document count';
   });
 
+//read user details
+fetch('/readUser')
+  .then(response => response.json())
+  .then(data => {
+    const  count  = data;
+    const userForm = document.getElementById('add-user-form');
+    const userTable = document.getElementById('userTable');
+    const userList = document.getElementById('user_list');
+    
+    count.forEach((result, index) => {
+      const newRow = userList.insertRow();
+          newRow.innerHTML = `
+              <td>${index + 1}</td>
+              <td>${result.Name}</td>
+              <td>${result.Email}</td>             
+              <td><button class="remove_user secondary-button" user-index="${result.id}">Cancel</button></td>
+          `;
+    });
+    const removeUserButton = document.querySelectorAll('.remove_user');
+    removeUserButton.forEach((button) => {
+      button.addEventListener('click', ()=>{
+        const id= parseInt(button.getAttribute('user-index'));
+        Register.deleteOne({id: id})
+        .then(window.location.reload())
+        .catch(err =>{
+          res.send(err);
+        })
+      })
+    })
+  })    
+  .catch(error => {
+    console.error('Error:', error);
+  });
 
 //window load func for update balance and bookings count
 function Count(){
@@ -117,16 +149,12 @@ document.addEventListener('DOMContentLoaded', function () {
       refreshTable();
       busForm.reset();
   });
-    
-  // const search = JSON.parse(localStorage.getItem('searchResults')) || [];
-  // const BusList = JSON.parse(localStorage.getItem('specialBusList')) || [];
-
-  // //Prepend 'specialBusList' to 'searchResults'
-  // search.push(...BusList);
-
-  // // Save the updated 'searchResults' back to local storage
-  // localStorage.setItem('searchResults', JSON.stringify(search));
 });
+
+//user list show
+document.addEventListener('DOMContentLoaded', ()=> {
+  
+})
 
 
 //popup close button

@@ -122,7 +122,8 @@ ul{
     border-radius: 6px;
     background-color: var(--primary-color);
     box-shadow: 0 0 2px var(--secondary-text-colour);
-    transition: 0.2s ease-out; 
+    transition: 0.2s ease-out;
+    
 }
 
 .secondary-button:hover{
@@ -429,9 +430,9 @@ ul{
     display: flex;
     justify-content: center;
     animation: fadeInRight 1s ease-out;
-}
+} 
 
-.hero-text p{
+.hero-text{
     animation: slideInLeft 1s ease-out;
 }
 

@@ -175,3 +175,8 @@ function closepopup() {
   const formPopUp = document.getElementById('feedback_form');
   formPopUp.style.display = 'none';
 }
+
+function closepopup2() {
+  const formPopUp = document.getElementsByClassName('popup');
+  formPopUp.style.display = 'none';
+}

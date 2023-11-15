@@ -39,6 +39,18 @@ app.get('/documentCount', async (req, res) => {
   }
 });
 
+//read user
+app.get('/readUser',(req, res) => {
+  Register.find()
+  .then(user => {
+    res.send(user)
+  })
+  .catch(err =>{
+    res.status(700).send(err);
+  })
+})
+
+//remove user
 
 
 app.listen(PORT, () => {
