@@ -504,7 +504,7 @@ ul{
 /*Footer*/
 
 .footer-content {
-    justify-content: center;
+    justify-content: center !important;
     align-items: center;
 }
 

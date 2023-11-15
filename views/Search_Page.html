@@ -44,6 +44,11 @@
         </nav>
     </header>
     <main>
+      <h2 class="container list_headings">Special Buses:</h2>
+       <div  id="specialBusList" class="main-content container">
+        <!-- Search results will be displayed here -->
+       </div>
+      <h2  class="container list_headings">Search Results:</h2>
        <div  id="searchResults" class="main-content container">
         <!-- Search results will be displayed here -->
        </div>
@@ -71,6 +76,30 @@
           <button class="secondary-button" onclick="location.reload()">Back</button>
         </div>
       </div>
+      <!-- Payment Pop-up (Hidden by default) special one -->
+      <div id="specialPaymentPopup" class="popup">
+        <div class="popup-content">
+          <h2 id="SpecialFareAmount">Pay Now </h2>
+          <p>Select Payment Method:</p>
+          <div class="payMethod">
+            <label>
+                <input type="radio" name="paymentMethod" value="netBanking" id="netBanking"> Net Banking
+              </label>
+              <br>
+              <label>
+                <input type="radio" name="paymentMethod" value="upi" id="upi"> UPI
+              </label>
+              <br>
+              <label>
+                <input type="radio" name="paymentMethod" value="appWallet" id="appWallet"> App Wallet
+              </label>
+              <br>
+          </div>
+          
+          <button class="secondary-button" onclick="processPayment2()" id="payButton">Pay</button>
+          <button class="secondary-button" onclick="closepopup()">Back</button>
+        </div>
+      </div>
     </main>
     <script src="js/My_Bookings.js" type="text/javascript"></script>
     <script src="js/Search_Page.js"  type="text/javascript"></script>
@@ -78,6 +107,7 @@
     <script>
         // Call the displaySearchResults function when the page loads
         window.onload = function() {
+          displaySpecialBusList()
           displaySearchResults();
         };
       </script>

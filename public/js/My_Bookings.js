@@ -10,7 +10,7 @@ function cancelBooking(index) {
 
     // Update the wallet balance (increment by the canceled booking's fare)
     const currentBalance = parseInt(localStorage.getItem('balance'));
-    const updatedBalance = currentBalance + canceledBookingFare;
+    const updatedBalance = currentBalance + Number(canceledBookingFare);
     localStorage.setItem('balance', updatedBalance);
 
     //Update admin Bank Balance
@@ -168,4 +168,10 @@ function printNow(index) {
         <button class="secondary-button" onclick="printNow(${index})">Print Now</button>
         <button class="secondary-button" onclick="location.reload()">Back</button>
         `;
+}
+
+//close pop ups
+function closepopup() {
+  const formPopUp = document.getElementById('feedback_form');
+  formPopUp.style.display = 'none';
 }

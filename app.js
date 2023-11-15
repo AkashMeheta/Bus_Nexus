@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 9000;
 
 require('./src/db/connection.js');
 const Register = require("./src/models/userSchema");
@@ -29,16 +29,18 @@ app.post('/log_in', loginRoutes);
 app.post('/addUser', addUserRoutes);
 
 app.get('/documentCount', async (req, res) => {
-    try {
-      // Use the .countDocuments() method to get the count of documents in the collection
-      const count = await Register.countDocuments();
-      res.json({ count }); // Send the count as JSON response
-    } catch (error) {
-      console.error('Error:', error);
-      res.status(500).send('Internal Server Error');
-    }
-  });
-  
+  try {
+    // Use the .countDocuments() method to get the count of documents in the collection
+    const count = await Register.countDocuments();
+    res.json({ count }); // Send the count as JSON response
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
 });

@@ -12,6 +12,14 @@ function searchBus() {
   const startLocation = document.getElementById('startLocation').value;
   const destination = document.getElementById('destination').value;
   const date = document.getElementById('date').value;
+   
+  // EXTRA JS
+  const BusList = JSON.parse(localStorage.getItem('specialBusList')) || [];
+  const search = JSON.parse(localStorage.getItem('searchResults')) || [];
+  search.push(BusList);
+  localStorage.setItem('searchResults', JSON.stringify(search));
+  // EXTRA JS
+
 
   if (!startLocation || !destination || !date) {
     alert('Please fill in all fields.');
@@ -42,7 +50,7 @@ function generateBusResults(startLocation, destination, date) {
     if (selectedDate > currentDateTime) {
       // For future dates, show results for all 24 hours with random minutes
       const randomMinute = Math.floor(Math.random() * 60);
-      const busTime = `${String(hour).padStart(2, '0')}:${String(randomMinute).padStart(2, '0')}`;
+      const bustime = `${String(hour).padStart(2, '0')}:${String(randomMinute).padStart(2, '0')}`;
       const fare = generateRandomFare(10, 100);
 
       // Create a bus result object
@@ -50,7 +58,7 @@ function generateBusResults(startLocation, destination, date) {
         startLocation: startLocation,
         destination: destination,
         date: date,
-        busTime: busTime,
+        bustime: bustime,
         fare: fare,
       };
 
@@ -59,7 +67,7 @@ function generateBusResults(startLocation, destination, date) {
       // For today's date, show results from the current time to 24 hours
       if (hour >= currentDateTime.getHours()) {
         const randomMinute = Math.floor(Math.random() * 60);
-        const busTime = `${String(hour).padStart(2, '0')}:${String(randomMinute).padStart(2, '0')}`;
+        const bustime = `${String(hour).padStart(2, '0')}:${String(randomMinute).padStart(2, '0')}`;
         const fare = generateRandomFare(10, 100);
 
         // Create a bus result object
@@ -67,7 +75,7 @@ function generateBusResults(startLocation, destination, date) {
           startLocation: startLocation,
           destination: destination,
           date: date,
-          busTime: busTime,
+          bustime: bustime,
           fare: fare,
         };
 
