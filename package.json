@@ -1,11 +1,14 @@
 {
+  "homepage": "http://AkashMeheta.github.io/Bus_Nexus",
   "name": "test3",
   "version": "1.0.0",
   "description": "bus management system",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "predeploy": "npm run build",
+    "build": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +17,8 @@
     "express": "^4.18.2",
     "mongoose": "^8.0.0",
     "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
