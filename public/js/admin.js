@@ -37,24 +37,20 @@ fetch('/readUser')
               <td>${index + 1}</td>
               <td>${result.Name}</td>
               <td>${result.Email}</td>             
-              <td><button class="remove_user secondary-button" user-index="${result.id}">Cancel</button></td>
+
           `;
     });
-    const removeUserButton = document.querySelectorAll('.remove_user');
-    removeUserButton.forEach((button) => {
-      button.addEventListener('click', ()=>{
-        const id= parseInt(button.getAttribute('user-index'));
-        Register.deleteOne({id: id})
-        .then(window.location.reload())
-        .catch(err =>{
-          res.send(err);
-        })
-      })
-    })
   })    
   .catch(error => {
     console.error('Error:', error);
   });
+
+// //remove user
+// function removeUser(id){
+//   const removeUserID = id;
+//   console.log(removeUserID);
+//   localStorage.setItem('removeUserId', JSON.stringify(removeUserID));
+// }
 
 //window load func for update balance and bookings count
 function Count(){
@@ -81,7 +77,7 @@ function addBusButton(){
   addBuspopup.style.display = 'block';
 }
 
-//add user logic
+//add bus logic
 document.addEventListener('DOMContentLoaded', function () {
   const busForm = document.getElementById('bus-form');
   const busTable = document.getElementById('bus-table');

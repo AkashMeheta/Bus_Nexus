@@ -51,6 +51,18 @@ app.get('/readUser',(req, res) => {
 })
 
 //remove user
+app.get('/removeUser', (req, res) => {
+  const id = JSON.parse(localStorage.getItem('removeUserId'));
+
+  Register.findByIdAndDelete(id)
+  .then(data => {
+    if(!data){
+      res.status(404).send({message: `cannot Delete with id ${id}. Maybe id is Wrong`});
+    }else{
+      res.send({message: `User Deleted Successfull`});
+    }
+  })
+})
 
 
 app.listen(PORT, () => {

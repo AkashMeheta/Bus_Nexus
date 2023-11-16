@@ -183,3 +183,6 @@ INPORTANT
                 </tbody>
             </table>
         </div>
+
+
+                      <td><a href="/removeUser" onclick="removeUser(${result.Email})" id="remove_user"><button  class="remove_user secondary-button">Remove</button></a></td>
