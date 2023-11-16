@@ -50,7 +50,7 @@ app.get('/readUser',(req, res) => {
   })
 })
 
-//remove user
+//remove user//
 app.get('/removeUser', (req, res) => {
   const id = JSON.parse(localStorage.getItem('removeUserId'));
 
