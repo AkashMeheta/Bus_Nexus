@@ -50,7 +50,7 @@ function displayMyBookings() {
             <p>Start Location: ${booking.startLocation}</p>
             <p>Destination: ${booking.destination}</p>
             <p>Date: ${booking.date}</p>
-            <p>Bus Time: ${booking.busTime}</p>
+            <p>Bus Time: ${booking.bustime}</p>
             <p>Fare: Rs ${booking.fare}</p>
             <p id="feedback_place">Feedback:  ${booking.feedback !== undefined ? booking.feedback : 'Give some feedback'}</p>
             <button class="secondary-button" onclick="cancelBooking(${index})">Cancel Booking</button>
@@ -131,7 +131,7 @@ function printNow(index) {
               <p>Start Location: ${printBus.startLocation}</p>
               <p>Destination: ${printBus.destination}</p>
               <p>Date: ${printBus.date}</p>
-              <p>Bus Time: ${printBus.busTime}</p>
+              <p>Bus Time: ${printBus.bustime}</p>
               <p>Fare: Rs ${printBus.fare}</p>
           </div> 
           <!-- Additional ticket information here -->
@@ -163,7 +163,7 @@ function printNow(index) {
         <p>Start Location: ${printBus.startLocation}</p>
         <p>Destination: ${printBus.destination}</p>
         <p>Date: ${printBus.date}</p>
-        <p>Bus Time: ${printBus.busTime}</p>
+        <p>Bus Time: ${printBus.bustime}</p>
         <p>Fare: Rs ${printBus.fare}</p>
         <button class="secondary-button" onclick="printNow(${index})">Print Now</button>
         <button class="secondary-button" onclick="location.reload()">Back</button>

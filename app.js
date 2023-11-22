@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 5000;
 
 require('./src/db/connection.js');
 const Register = require("./src/models/userSchema");
