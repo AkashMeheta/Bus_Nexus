@@ -76,3 +76,9 @@
     font-weight: 500;
     font-family: 'space grotesk', sans-serif;
 }
+
+.Count{
+    width: 70px;
+    height: 40px;
+    margin: 20px 0px;
+}

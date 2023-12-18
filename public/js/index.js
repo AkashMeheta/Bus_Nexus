@@ -12,7 +12,7 @@ function searchBus() {
   const startLocation = document.getElementById('startLocation').value;
   const destination = document.getElementById('destination').value;
   const date = document.getElementById('date').value;
-   
+  const count = document.getElementById('count').value;
   // EXTRA JS
   const BusList = JSON.parse(localStorage.getItem('specialBusList')) || [];
   const search = JSON.parse(localStorage.getItem('searchResults')) || [];
@@ -27,7 +27,7 @@ function searchBus() {
   }
 
   // Generate bus results in one-hour intervals starting from the user's search time
-  const searchResults = generateBusResults(startLocation, destination, date);
+  const searchResults = generateBusResults(startLocation, destination, date, count);
 
   if (searchResults.length === 0) {
     alert('No buses found for your search criteria.');
@@ -41,7 +41,7 @@ function searchBus() {
 }
 
 // Custom function to generate bus results based on the selected date
-function generateBusResults(startLocation, destination, date) {
+function generateBusResults(startLocation, destination, date, count) {
   const searchResults = [];
   const currentDateTime = new Date();
   const selectedDate = new Date(date);
@@ -52,7 +52,7 @@ function generateBusResults(startLocation, destination, date) {
       const randomMinute = Math.floor(Math.random() * 60);
       const bustime = `${String(hour).padStart(2, '0')}:${String(randomMinute).padStart(2, '0')}`;
       const fare = generateRandomFare(10, 100);
-
+      
       // Create a bus result object
       const result = {
         startLocation: startLocation,
@@ -60,6 +60,7 @@ function generateBusResults(startLocation, destination, date) {
         date: date,
         bustime: bustime,
         fare: fare,
+        count:count,
       };
 
       searchResults.push(result);
@@ -69,7 +70,7 @@ function generateBusResults(startLocation, destination, date) {
         const randomMinute = Math.floor(Math.random() * 60);
         const bustime = `${String(hour).padStart(2, '0')}:${String(randomMinute).padStart(2, '0')}`;
         const fare = generateRandomFare(10, 100);
-
+       
         // Create a bus result object
         const result = {
           startLocation: startLocation,
@@ -77,6 +78,7 @@ function generateBusResults(startLocation, destination, date) {
           date: date,
           bustime: bustime,
           fare: fare,
+          count:count,
         };
 
         searchResults.push(result);

@@ -1,4 +1,5 @@
 // Search Results Page
+
 //display Search Result
 function displaySearchResults() {
     const searchResults = JSON.parse(localStorage.getItem('searchResults'));
@@ -22,6 +23,7 @@ function displaySearchResults() {
           <p>Date</p>
           <p>Bus Time</p>
           <p>Fare</p>
+          <p>Count</p>
           <p>Button</p>
       `;
       resultsContainer.appendChild(search_top);
@@ -36,11 +38,13 @@ function displaySearchResults() {
           <p>${result.date}</p>
           <p>${result.bustime}</p>
           <p>Rs ${result.fare}</p>
+          
           <button class="secondary-button" onclick="bookBus(${index})">Book Bus</button>
         `;
-        
+        //console.log(passengerCount);
         resultsContainer.appendChild(resultElement);
       });
+      
     }
     //localStorage.clear();
   }
@@ -104,9 +108,13 @@ function bookBus(index) {
     // Retrieve the selected bus without modifying time and fare
     const selectedBus = Object.assign({}, searchResults[index]);
 
+    //passenger count
+    const passengerCount = selectedBus.count;
+    console.log(passengerCount);
+
     //fare amount
-    const fareAmount = selectedBus.fare;
-    console.log(fareAmount);
+    const fareAmount = selectedBus.fare * passengerCount;
+    //console.log(fareAmount);
     localStorage.setItem('FareAmount', JSON.stringify(fareAmount));
 
     // Redirect to the My Bookings Page
@@ -122,6 +130,8 @@ function bookBus(index) {
       const fareAmountElement = document.getElementById('fareAmount');
       fareAmountElement.textContent = `Pay Now: Rs.${paymentAmount}`;
 
+      
+      //paymentPopup.append(passenger);
       // Store the selected bus index in localStorage for later retrieval after payment
       localStorage.setItem('selectedBusIndex', index);
   }

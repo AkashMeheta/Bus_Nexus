@@ -6,7 +6,7 @@ function cancelBooking(index) {
 
   if (myBookings && index >= 0 && index < myBookings.length) {
     const canceledBooking = myBookings[index];
-    const canceledBookingFare = canceledBooking.fare;
+    const canceledBookingFare = canceledBooking.fare * canceledBooking.count;
 
     // Update the wallet balance (increment by the canceled booking's fare)
     const currentBalance = parseInt(localStorage.getItem('balance'));
@@ -51,7 +51,8 @@ function displayMyBookings() {
             <p>Destination: ${booking.destination}</p>
             <p>Date: ${booking.date}</p>
             <p>Bus Time: ${booking.bustime}</p>
-            <p>Fare: Rs ${booking.fare}</p>
+            <p>Fare: Rs ${booking.fare * booking.count}</p>
+            <p>Number of Tickets: ${booking.count}</p>
             <p id="feedback_place">Feedback:  ${booking.feedback !== undefined ? booking.feedback : 'Give some feedback'}</p>
             <button class="secondary-button" onclick="cancelBooking(${index})">Cancel Booking</button>
             <button class="secondary-button" onclick="printTicket(${index})">Print Ticket</button>
@@ -132,7 +133,8 @@ function printNow(index) {
               <p>Destination: ${printBus.destination}</p>
               <p>Date: ${printBus.date}</p>
               <p>Bus Time: ${printBus.bustime}</p>
-              <p>Fare: Rs ${printBus.fare}</p>
+              <p>Fare: Rs ${printBus.fare * printBus.count}</p>
+              <p>Number of Tickets: ${printBus.count}</p>
           </div> 
           <!-- Additional ticket information here -->
         </body>
@@ -164,7 +166,8 @@ function printNow(index) {
         <p>Destination: ${printBus.destination}</p>
         <p>Date: ${printBus.date}</p>
         <p>Bus Time: ${printBus.bustime}</p>
-        <p>Fare: Rs ${printBus.fare}</p>
+        <p>Fare: Rs ${printBus.fare * printBus.count}</p>
+        <p>Number of Tickets: ${printBus.count}</p>
         <button class="secondary-button" onclick="printNow(${index})">Print Now</button>
         <button class="secondary-button" onclick="location.reload()">Back</button>
         `;
