@@ -23,7 +23,6 @@ function displaySearchResults() {
           <p>Date</p>
           <p>Bus Time</p>
           <p>Fare</p>
-          <p>Count</p>
           <p>Button</p>
       `;
       resultsContainer.appendChild(search_top);
@@ -38,7 +37,6 @@ function displaySearchResults() {
           <p>${result.date}</p>
           <p>${result.bustime}</p>
           <p>Rs ${result.fare}</p>
-          
           <button class="secondary-button" onclick="bookBus(${index})">Book Bus</button>
         `;
         //console.log(passengerCount);
@@ -73,6 +71,7 @@ function displaySpecialBusList() {
         <p>Date</p>
         <p>Bus Time</p>
         <p>Fare</p>
+        <p>count</p>
         <p>Button</p>
     `;
     resultsContainer.appendChild(search_top);
@@ -87,6 +86,7 @@ function displaySpecialBusList() {
         <p>${result.date}</p>
         <p>${result.bustime}</p>
         <p>Rs ${result.fare}</p>
+        <p><input type="text" id="SpecialCount" placeholder="Count" style="max-width: 50px;  height: 50px;"/><button class="CountOkButton" onclick="okButton(${index})"style="background-color: #ffbf23; color: balck; cursor: pointer;">ok</button></p>
         <button class="secondary-button" onclick="bookSpecialBus(${index})">Book Bus</button>
       `;
       
@@ -95,6 +95,19 @@ function displaySpecialBusList() {
   }
 
   //localStorage.clear();
+}
+
+//count ok button
+function okButton(index){
+  const count = document.getElementById("SpecialCount").value;
+  console.log(count);
+
+  const specialBusList = JSON.parse(localStorage.getItem("specialBusList"));
+  specialBusList[index].count=parseInt(count);
+  localStorage.setItem('specialBusList', JSON.stringify(specialBusList));
+  
+  const specialBusList1 = JSON.parse(localStorage.getItem("specialBusList"));
+  console.log(specialBusList1);
 }
 
 
@@ -146,9 +159,13 @@ function bookBus(index) {
     } else {
       // Retrieve the selected bus without modifying time and fare
       const selectedBus = Object.assign({}, searchResults[index]);
-  
+      
+      //passenger count
+      const passengerCount = selectedBus.count;
+      console.log(passengerCount);
+
       //fare amount
-      const fareAmount = selectedBus.fare;
+      const fareAmount = selectedBus.fare * passengerCount;
       console.log(fareAmount);
       const fareAmountNumber = Number(fareAmount);
       localStorage.setItem('FareAmount', JSON.stringify(fareAmountNumber));
@@ -183,7 +200,7 @@ function processPayment() {
       // Get the selected bus
       const selectedBus = searchResults[index];
 
-      // Process the payment (you can implement your payment logic here)
+      // Process the payment 
 
       // Add the selected bus to My Bookings
       const bookings = JSON.parse(localStorage.getItem('bookings')) || [];

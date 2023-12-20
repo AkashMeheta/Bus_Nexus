@@ -131,13 +131,15 @@ document.addEventListener('DOMContentLoaded', function () {
       const date = document.getElementById('date').value;
       const bustime = document.getElementById('time').value;
       const fare = document.getElementById('fare').value;
+      const count = 1;
 
       const newBus = {
           startLocation,
           destination,
           date,
           bustime,
-          fare
+          fare,
+          count,
       };
 
       specialBusList.push(newBus);
